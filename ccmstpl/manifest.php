@@ -7,6 +7,11 @@ header("Expires: " . gmdate("D, d M Y H:i:s T", time() + ($CFG["CACHE_EXPIRE"] *
 	"description": "{CCMS_DB:index,description}",
 	"icons": [
 		{
+			"src": "/ccmstpl/_img/ico/android-chrome-144x144.png",
+			"sizes": "144x144",
+			"type": "image/png",
+			"purpose": "maskable"
+		},{
 			"src": "/ccmstpl/_img/ico/android-chrome-192x192.png",
 			"sizes": "192x192",
 			"type": "image/png",
