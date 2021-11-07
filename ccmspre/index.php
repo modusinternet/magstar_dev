@@ -1018,7 +1018,6 @@ function CCMS_Main() {
 		$CLEAN["ccms_tpl_org"] = $CLEAN["ccms_tpl"];
 
 		header("HTTP/1.0 404 not found");
-		header("CLEANccms_tpl: " . $CLEAN["ccms_tpl"]);
 
 		if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . "/error.php")) {
 			ob_start();
