@@ -513,8 +513,8 @@ function CCMS_DB_Dir($a) {
 		} else {
 			// Not editable on the public side.
 
-			// I need to work on this section when I get back to fixing the public side editing of content.
-			
+			// I need to work on this section when I get back to fixing the public side editing of content.  I get errors in this area when testsing on Ivo's system.
+
 			//if($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] != "") {
 			//if($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] ?? null) {
 			if(($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] ?? null) !== "") {
