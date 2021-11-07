@@ -100,7 +100,7 @@ self.addEventListener('fetch',(event) => {
 					/* The template being called was not found in cache and there is not internet connection at the moment so display the offline page instead.  The code below makes sure we're dispalying the appropriate offline template for the language that's currently selected by the client. */
 					const regex = /\/(([a-z]{2,3})(-[a-z0-9]{2,3})?)\//i;
 					const lng = event.request.url.match(regex);
-					const searchForThis = '/' + lng[1] + '/examples/offline.html';
+					const searchForThis = '/' + lng[1] + '/offline.html';
 					return caches.match(searchForThis);
 				})
 			})
