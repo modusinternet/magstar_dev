@@ -635,7 +635,9 @@ body.nav-on-left.overflow-hidden{overflow:hidden}
 
 .svg-nav-icon2{stroke:var(--cl4)}
 
-#headerTop{display:none}
+#headerTop{
+	/*display:none*/
+}
 
 #logo1{
 	left:15px;
