@@ -215,6 +215,29 @@
 	<body>
 		<div id="loading_svg"></div>
 
+<nav class="vg-nav">
+<ul class="vg-nav-main-container">
+<li class="active"><a href="/">Home page</a></li>
+<li class="dropdown">
+<a href="#">Left dropdown</a>
+<ul class="left">
+...
+</ul>
+</li>
+<li class="dropdown-mega">
+<a href="#">Mega Menu</a>
+<div class="dropdown-mega-container">
+...
+</div>
+</li>
+<li class="dropdown">
+<a href="#">Right dropdown</a>
+<ul class="right">
+...
+</ul>
+</li>
+</ul>
+</nav>
 
 
 
@@ -236,8 +259,7 @@
 
 
 
-
-		{CCMS_TPL:/body-header.html}
+		{  CCMS_TPL:/body-header.html}
 
 		{CCMS_TPL:/a2hs-box.html}
 		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
@@ -276,6 +298,10 @@
 									elements_selector:".lazy",
 									cancel_on_exit:true
 								});
+
+new VGNav({
+expand: 'md',
+}).toggle()
 
 							});
 						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
