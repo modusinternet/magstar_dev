@@ -100,6 +100,7 @@
 			}
 
 			.carousel-large>p,.carousel-medium>p,.carousel-small>p{
+				font-weight:600;
 				margin:0 80px;
 				max-width:900px
 			}
@@ -322,7 +323,7 @@
 			function loadJSResources(){
 				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","MODERNIZER","","")}",function(){
 					loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
-						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","1")}",function(){
+						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
 							loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
 
 								var lazyLoad = new LazyLoad({
