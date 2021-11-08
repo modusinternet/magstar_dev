@@ -10,8 +10,6 @@ window.setTimeout(function(){
 },250);
 /* Loading Screen END */
 
-console.log("main loaded...");
-
 /* nav bar active selector */
 activeArray_01.forEach(function(s){$("#"+s).addClass("active");});
 /*navActiveFooterArray.forEach(function(s){$("#"+s).addClass("active");});*/
