@@ -95,7 +95,7 @@
 			{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_css_link("","","CSS-01","","1")}
 
 			function loadJSResources(){
-				loadFirst("{CCMS_LIB:site.php;FUNC:build_js_link("","","JQUERY")}",function(){
+				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
 					loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","1")}",function(){
 						loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
 
