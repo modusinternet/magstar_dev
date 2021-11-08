@@ -5,5 +5,7 @@ function load_resource($arg){
 	//echo $CFG["RES"][$arg[0]];
 	if((isset($CFG["RES"][$arg]) ?? null) !== "") {
 		echo $CFG["RES"][$arg];
+	} else {
+		echo "";
 	}
 }
