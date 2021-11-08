@@ -10,6 +10,7 @@ window.setTimeout(function(){
 },250);
 /* Loading Screen END */
 
+console.log("main loaded...");
 
 /* nav bar active selector */
 navActiveArray.forEach(function(s){$("#"+s).addClass("active");});
