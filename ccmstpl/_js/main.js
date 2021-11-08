@@ -13,7 +13,7 @@ window.setTimeout(function(){
 console.log("main loaded...");
 
 /* nav bar active selector */
-navActiveArray.forEach(function(s){$("#"+s).addClass("active");});
+activeArray_01.forEach(function(s){$("#"+s).addClass("active");});
 /*navActiveFooterArray.forEach(function(s){$("#"+s).addClass("active");});*/
 
 
