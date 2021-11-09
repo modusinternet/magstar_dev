@@ -42,6 +42,8 @@
 		<style nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			{CCMS_TPL:/_css/head-css.html}
 
+
+			/* Carousel CSS START */
 			.carousel{
 				box-shadow:0 2px 12px rgba(0,0,0,.4);
 				height:500px;
@@ -188,7 +190,6 @@
 					url("{CCMS_LIB:site.php;FUNC:load_resource("AWS")}/ccmstpl/_img/ZkWXBbpe76tVfpVHug9Xc-3R4m7hSTb80TIFJ2qAMskeJxFPc.jpg");
 			}
 
-
 			/* 769px or larger. */
 			@media only screen and (min-width:769px){
 				.carousel-large{display:none}
@@ -196,72 +197,109 @@
 				.carousel-small{display:none}
 			}
 
-
 			/* 1025px or larger. */
 			@media only screen and (min-width:1025px){
 				.carousel-large{display:block}
 				.carousel-medium{display:none}
 				.carousel-small{display:none}
 			}
-			/* --------------
-			Carousel CSS END
-			----------------- */
+			/* Carousel CSS END */
+
+
+			ul, ol {
+				list-style: none;
+				padding-left: 15px;
+			}
 		</style>
 		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			let activeArray_01 = ["lng-{CCMS_LIB:_default.php;FUNC:ccms_lng}"];
 			/* let activeArray_02 = ["fl-homepage"]; */
 		</script>
 	</head>
+
 	<body>
 		<div id="loading_svg"></div>
 
-<nav class="vg-nav">
-<ul class="vg-nav-main-container">
-<li class="active"><a href="/">Home page</a></li>
-<li class="dropdown">
-<a href="#">Left dropdown</a>
-<ul class="left">
-...
-</ul>
-</li>
-<li class="dropdown-mega">
-<a href="#">Mega Menu</a>
-<div class="dropdown-mega-container">
-...
-</div>
-</li>
-<li class="dropdown">
-<a href="#">Right dropdown</a>
-<ul class="right">
-...
-</ul>
-</li>
-</ul>
-</nav>
+		<main style="margin-top:500px">
+		  <div class="contentType1">
+		    <p>this is a test.<br>
+		      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		  </div>
+		  {CCMS_TPL:/footer.html}
+		</main>
 
+		<div class="carousel">
+			<div class="carousel-01 carousel-item" style="opacity:1">
+				<div class="carousel-large">
+					<h1>Large carousel-01</h1>
+					<p>carousel-01: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-medium">
+					<h2>Medium carousel-01</h2>
+					<p>carousel-01: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-small">
+					<h3>Small carousel-01</h3>
+					<p>carousel-01: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+			</div>
+			<div class="carousel-02 carousel-item">
+				<div class="carousel-large">
+					<h1>Large carousel-02</h1>
+					<p>carousel-02: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-medium">
+					<h2>Medium carousel-02</h2>
+					<p>carousel-02: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-small">
+					<h3>Small carousel-02</h3>
+					<p>carousel-02: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+			</div>
+			<div class="carousel-03 carousel-item">
+				<div class="carousel-large">
+					<h1>Large carousel-03</h1>
+					<p>carousel-03: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-medium">
+					<h2>Medium carousel-03</h2>
+					<p>carousel-03: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-small">
+					<h3>Small carousel-03</h3>
+					<p>carousel-03: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+			</div>
+			<div class="carousel-04 carousel-item">
+				<div class="carousel-large">
+					<h1>Large carousel-04</h1>
+					<p>carousel-04: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-medium">
+					<h2>Medium carousel-04</h2>
+					<p>carousel-04: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+				<div class="carousel-small">
+					<h3>Small carousel-04</h3>
+					<p>carousel-04: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="#" class="learnMore">LEARN MORE</a></p>
+				</div>
+			</div>
+			<a id="carousel-prev">&#10094;</a>
+			<a id="carousel-next" style="right:0px">&#10095;</a>
+		</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		{  CCMS_TPL:/body-header.html}
+		{CCMS_TPL:/body-header.html}
 
 		{CCMS_TPL:/a2hs-box.html}
+
 		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			{CCMS_TPL:/_js/footer-js.html}
 
@@ -299,9 +337,9 @@
 									cancel_on_exit:true
 								});
 
-new VGNav({
-expand: 'md',
-}).toggle()
+								new VGNav({
+								  expand: 'md',
+								}).toggle()
 
 							});
 						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
@@ -310,7 +348,6 @@ expand: 'md',
 			}
 
 			/* Carousel START */
-			/*
 			var speed=8000;
 			var carouselIndex=0;
 			var intervalID;
@@ -338,7 +375,6 @@ expand: 'md',
 			carouselPlus(1);
 			document.getElementById("carousel-prev").addEventListener("click",function(){carouselPlus(-1)});
 			document.getElementById("carousel-next").addEventListener("click",function(){carouselPlus(1)});
-			*/
 			/* Carousel END */
 		</script>
 	</body>
