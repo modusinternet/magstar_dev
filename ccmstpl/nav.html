@@ -337,7 +337,7 @@
 
 
 
-			<nav class="vg-nav">
+			<nav class="vg-nav" id="myNav">
 				<ul class="vg-nav-main-container">
 					<li class="dropdown">
 						<a href="#">Left dropdown</a>
@@ -449,8 +449,11 @@
 									cancel_on_exit:true
 								});
 
-								new VGNav().toggle();
+								/*new VGNav().toggle();*/
 								/*new VGNav({expand: 'md',}).toggle()*/
+								let vg_nav = new VGNav('#myNav');
+								vg_nav.toggle()
+
 
 							});
 						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
