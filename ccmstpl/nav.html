@@ -312,7 +312,7 @@
 
 
 
-			<div id="headerTop" class="active">
+
 				<a href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/" title="{CCMS_DB:all,homepage}">
 					<picture class="logo" id="logo1">
 						<source srcset="{CCMS_LIB:site.php;FUNC:load_resource("AWS")}/ccmstpl/_img/logo.webp" type="image/webp">
@@ -323,7 +323,7 @@
 						<img style="width:45px" src="{CCMS_LIB:site.php;FUNC:load_resource("AWS")}/ccmstpl/_img/logo-ico-s.png">
 					</picture>
 				</a>
-			</div>
+
 
 
 
@@ -439,21 +439,19 @@
 			function loadJSResources(){
 				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","MODERNIZER","","")}",function(){
 					loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
-						loadFirst("/ccmstpl/_js/vgnav.js",function(){
-							loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
-								loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
+						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
+							loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
 
-									var lazyLoad = new LazyLoad({
-										elements_selector:".lazy",
-										cancel_on_exit:true
-									});
-
-									new VGNav().toggle();
-									/*new VGNav({expand: 'md',}).toggle()*/
-
+								var lazyLoad = new LazyLoad({
+									elements_selector:".lazy",
+									cancel_on_exit:true
 								});
-							}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
-						});
+
+								new VGNav().toggle();
+								/*new VGNav({expand: 'md',}).toggle()*/
+
+							});
+						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
 					}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JQUERY")});
 				}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","MODERNIZER")});
 			}

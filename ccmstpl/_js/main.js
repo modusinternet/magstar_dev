@@ -21,22 +21,16 @@ $(window).scroll(function() {
 	if(scroll >= 80) {
 		$("#logo1").attr("style","opacity:0");
 		$("#logo2").attr("style","opacity:1");
+		/*
 		$("#headerTop").removeClass("active");
 		$(".navigation").addClass("scrolled");
-		/*
-		$(".cd-header-buttons").addClass("scrolled");
-		$(".cd-search").addClass("scrolled");
-		$(".scrollToTopButton").addClass("scrollToTopButton-active");
 		*/
 	} else {
 		$("#logo1").attr("style","opacity:1");
 		$("#logo2").attr("style","opacity:0");
+		/*
 		$("#headerTop").addClass("active");
 		$(".navigation").removeClass("scrolled");
-		/*
-		$(".cd-header-buttons").removeClass("scrolled");
-		$(".cd-search").removeClass("scrolled");
-		$(".scrollToTopButton").removeClass("scrollToTopButton-active");
 		*/
 	}
 });
@@ -45,218 +39,16 @@ $(window).scroll(function() {
 /* ----------
 Navigation Code Begin
 ---------- */
-(function(s) {
-	"use strict";
-
-	s.fn.vegasMenu = function(a) {
-
-		a = s.extend({
-			afterClickLink: function() {}
-		}, arguments[0] || {});
-
-		var e = s("body"),
-			n = window.innerWidth,i;
-		var l = a.expand || "sidebar";
-		var r = "vg-nav-hamburger",
-			t = "vg-nav-sidebar",
-			d = "vg-nav-collapse",
-			o = "vg-nav-overlay",
-			c = "vg-nav-hover";
-		var f = this,
-			v = s(this),
-			h = f.children("ul"),
-			u = "vg-nav-main-container",
-			C = "show";
-		var g = a.toggle || '<span class="default"></span>';
-		var p = "vg-nav-xl",
-			m = "vg-nav-lg",
-			w = "vg-nav-md",
-			x = "vg-nav-sm",
-			b = "vg-nav-xs";
-		var k = 1200,
-			_ = 992,
-			y = 768,
-			L = 480,
-			W = 0;
-		var j = 1921,
-			z = 1200,
-			M = 992,
-			Q = 768,
-			q = 480;
-		h.addClass(u);
-
-		G();
-
-		if (l === "sidebar") {
-			var A = e.find("." + t),
-				B = a.sidebar || false,
-				D = f.attr("data-sidebar-open") || "right";
-			e.find("." + d).remove();
-			if (B) {
-				var E = B.width || false;
-				D = B.open || D;
-				if (E) {
-					K(n, E);
-					s(window).on("resize", function() {
-						K(s(this).width(), E)
-					})
-				}
-			}
-			H(D)
-		} else if (l === "collapse") {
-			I()
-		}
-
-		var F = function() {
-			if (f.hasClass(c)) {
-				return N()
-			} else {
-				return false
-			}
-		};
-
-		s(document).on("click", "." + u + " li.dropdown a", function() {
-		/*s(document).on("click", "." + u + " li.dropdown a>span", function() {*/
-			if (F()) return;
-			var a = s(this), e = a.parent("li");
-			s(".dropdown-mega").removeClass(C);
-			if (e.parent("ul").hasClass(u)) {
-				var n = h.find("." + C);
-				if (n.hasClass("current")) n.removeClass(C);
-				if (!e.hasClass("current")) {
-					e.addClass(C).addClass("current");
-					n.removeClass("current")
-				} else {
-					e.removeClass(C).removeClass("current")
-				}
-				return false
-			} else {
-				if (e.hasClass(C)) {
-					a.parent("li").removeClass(C);
-					if (e.parent("ul").hasClass(u)) {
-						h.find("." + C).removeClass(C)
-					}
-				} else {
-					if (a.parent("li").children("ul").length > 0) {
-						a.parent("li").addClass(C);
-						return false
-					}
-				}
-			}
-		});
-
-		s(document).on("click", "." + u + " li.dropdown-mega > a", function() {
-			if (F()) return;
-			var a = s(this);
-			var e = a.parent("li");
-			if (e.hasClass(C)) {
-				e.removeClass(C)
-			} else {
-				h.find("." + C).removeClass(C).removeClass("current");
-				e.addClass(C)
-			}
-			return false
-		});
-
-		s(document).mouseup(function(a) {
-			var e = s("." + u);
-			if (e.has(a.target).length === 0) {
-				h.find("." + C).removeClass(C).removeClass("current")
-			}
-		});
-
-		s(document).on("click", "." + r + ", ." + o + ", [data-sidebar-close]", function() {
-			e.find("." + r).toggleClass(C);
-			if (l === "sidebar") {
-				e.find("." + t).toggleClass(C);
-				e.find("." + o).toggleClass(C)
-			} else if (l === "collapse") {
-				e.find("." + d).toggleClass(C)
-			}
-			return false
-		});
-
-		s(document).on("click", "." + u + " li a", function() {
-			a.afterClickLink.call(this, s(this))
-		});
-
-		function G() {
-			var a = e.find(".dropdown-mega > a, .dropdown > a"),
-				n = '<span class="toggle">' + g + "</span>";
-			a.each(function() {
-				var a = s(this).text();
-				s(this).html(a + n)
-			});
-			if (f.hasClass(p) || f.hasClass(m) || f.hasClass(w) || f.hasClass(x) || f.hasClass(b)) {
-				f.prepend('<a href="#" class="' + r + '"><span></span><span></span><span></span></a>')
-			}
-		}
-
-		function H(s) {
-			var a;
-			if (f.hasClass(p) || f.hasClass(m) || f.hasClass(w) || f.hasClass(x) || f.hasClass(b)) {
-				if (!A.length) {
-					e.append('<div class="' + t + " " + s + '">' + '<div class="' + t + '__close" data-sidebar-close>&times;</div>' + '<div class="' + t + '__content"></div>' + "</div>");
-					J(e.find("." + t + "__content"))
-				} else {
-					a = A.detach();
-					e.append(a);
-					A.addClass(s)
-				}
-				e.append('<div class="' + o + " " + s + '"></div>')
-			}
-		}
-
-		function I() {
-			J(e.find("." + d))
-		}
-
-		function J(s) {
-			var a = h.clone().addClass("vg-nav-cloned");
-			s.append(a)
-		}
-
-		function K(a, e) {
-			var n = s("." + t);
-			if (a >= k && e.xl) {
-				n.css("width", e.xl).css("right", "-" + e.xl)
-			}
-			if (a < k && a >= _ && e.lg) {
-				n.css("width", e.lg).css("right", "-" + e.lg)
-			}
-			if (a < _ && a >= y && e.md) {
-				n.css("width", e.md).css("right", "-" + e.md)
-			}
-			if (a < y && a >= L && e.sm) {
-				n.css("width", e.sm).css("right", "-" + e.sm)
-			}
-			if (a < L && e.xs) {
-				n.css("width", e.xs).css("right", "-" + e.xs)
-			}
-		}
-
-		function N() {
-			if (v.hasClass(p)) {
-				i = j
-			} else if (v.hasClass(m)) {
-				i = z
-			} else if (v.hasClass(w)) {
-				i = M
-			} else if (v.hasClass(x)) {
-				i = Q
-			} else if (v.hasClass(b)) {
-				i = q
-			} else {
-				i = W
-			}
-			return window.innerWidth >= i
-		}
-
-		return false
-	}
-})(jQuery);
-
-$('.vg-nav').vegasMenu();
+"use strict";class VGNav{constructor(a,b){this.settings=Object.assign({expand:"lg",layout:"sidebar",isHover:!1,toggle:"<span class=\"default\"></span>",mobileTitle:"",sidebar:{placement:"right",clone:null}},a),this.callback=b,this.breakpoints={max:{xl:1921,lg:1200,md:992,sm:768,xs:480},min:{xl:1200,lg:992,md:768,sm:480,xs:0}},this.container=".vg-nav",this.classes={container:"vg-nav-main-container",hamburger:"vg-nav-hamburger",sidebar:"vg-nav-sidebar",collapse:"vg-nav-collapse",overlay:"vg-nav-overlay",cloned:"vg-nav-cloned",hover:"vg-nav-hover",XL:"vg-nav-xl",LG:"vg-nav-lg",MD:"vg-nav-md",SM:"vg-nav-sm",XS:"vg-nav-xs"},this.current_responsive_size="",this.isInit=!1,this.isInit||this.init()}init(){var a=this,b=document.querySelector(a.container),c=document.querySelector("."+a.classes.container);if(!b||!c)return!1;// Определим в основной контайнер конфигурационные классы
+b.classList.add("vg-nav-"+a.settings.expand),a.settings.isHover&&b.classList.add(a.classes.hover);// Устанавливаем указатель переключателя
+var d=b.querySelectorAll(".dropdown-mega > a, .dropdown > a"),e="<span class=\"toggle\">"+a.settings.toggle+"</span>";d.forEach(function(a){a.insertAdjacentHTML("beforeend",e)});// Устанавливаем гамбургер
+var f=b.classList.contains(a.classes.XL)||b.classList.contains(a.classes.LG)||b.classList.contains(a.classes.MD)||b.classList.contains(a.classes.SM)||b.classList.contains(a.classes.XS);if(f){var l="";a.settings.mobileTitle&&(l="<span class=\""+a.classes.hamburger+"--title\">"+a.settings.mobileTitle+"</span>"),b.insertAdjacentHTML("afterbegin","<a href=\"#\" class=\""+a.classes.hamburger+"\">"+l+"<span class=\""+a.classes.hamburger+"--lines\"><span></span><span></span><span></span></span></a>")}// Слои мобильной навигации
+if("sidebar"===this.settings.layout){var g,h=document.getElementsByClassName(a.classes.sidebar),i=a.settings.sidebar||!1,j=i.placement||"right",k=document.getElementsByClassName(a.classes.collapse);if(k.length&&k[0].remove(),f){if(!h.length){document.body.insertAdjacentHTML("beforeend","<div class=\""+a.classes.sidebar+" "+j+"\"><div class=\""+a.classes.sidebar+"__close\" data-dismiss=\""+a.classes.sidebar+"\">&times;</div><div class=\""+a.classes.sidebar+"__content\"></div></div>");var m=document.getElementsByClassName(a.classes.sidebar+"__content");a.cloneNavigation(m,b.querySelector("."+a.classes.container))}else if(g=h[0].cloneNode(!0),document.body.appendChild(g),h[1].classList.add(j),h[0].remove(),"clone"in i&&i.clone){var n=document.querySelector("."+a.classes.sidebar).querySelectorAll(i.clone);n&&a.cloneNavigation(n,b.querySelector("."+a.classes.container))}document.body.insertAdjacentHTML("beforeend","<div class=\""+a.classes.overlay+" "+j+"\"></div>")}}else if("collapse"===a.settings.layout){var o=document.getElementsByClassName(a.classes.collapse);a.cloneNavigation(o,b.querySelector("."+a.classes.container))}this.isInit=!0,this.toggle(this.callback)}toggle(a){function b(a,b,c){a&&"beforeClick"in a&&"function"==typeof a.beforeClick&&a.beforeClick(b,c)}function c(a,b,c){a&&"afterClick"in a&&"function"==typeof a.afterClick&&a.afterClick(b,c)}function d(){var a=document.getElementsByClassName(f.classes.hamburger);if(a.length&&a[0].classList.remove("show"),"sidebar"===f.settings.layout){var b=document.getElementsByClassName(f.classes.sidebar),c=document.getElementsByClassName(f.classes.overlay);b&&c&&(b[0].classList.remove("show"),c[0].classList.remove("show")),document.body.classList.contains("vg-nav-sidebar-open")&&(document.body.classList.remove("vg-nav-sidebar-open"),document.body.style.paddingRight=0),f.dispose(h),f.dispose(h,"dropdown-mega")}else"collapse"===f.settings.layout&&document.getElementsByClassName(f.classes.collapse)[0].classList.remove("show");return!1}if(!this.isInit)return!1;var f=this,g=document.querySelector(f.container),h=document.querySelectorAll("."+f.classes.container),i=document.querySelectorAll("."+f.classes.container+" li > a"),j=g.querySelector("."+f.classes.hamburger),k=document.querySelector("."+f.classes.overlay),l=document.querySelector("[data-dismiss=vg-nav-sidebar]");// Функция обратного вызова после инициализации скрипта
+// Закрываем меню, если кликнули по экрану
+// Открываем, закрываем боковую панель или выпадающий список
+a&&"afterInit"in a&&"function"==typeof a.afterInit&&a.afterInit(f),i.forEach(function(d){d.onclick=function(d){if(!f.clickable()){var e=this,g=e.closest("li");// Открываем обычное меню
+if(b(a,f,d),g.classList.contains("dropdown")){if(f.dispose(h,"dropdown-mega"),g.closest("ul").classList.contains(f.classes.container))return g.classList.contains("show")?g.classList.remove("show"):(f.dispose(h),g.classList.add("show")),c(a,f,d),!1;if(g.classList.contains("show"))return e.closest("li").classList.remove("show"),f.dispose(g),c(a,f,d),!1;for(var j,k=g.children,l=1;l<=k.length;l++)"UL"===k[l-1].tagName&&(j=k[l-1]);if(0<k.length)return e.closest("li").classList.add("show"),c(a,f,d),!1}// Открываем мега меню
+return g.classList.contains("dropdown-mega")?(g.classList.contains("show")?g.classList.remove("show"):(f.dispose(h),g.classList.add("show")),c(a,f,d),!1):void c(a,f,d)}}}),window.addEventListener("mouseup",a=>{a.target.closest("."+f.classes.container)||(f.dispose(h),f.dispose(h,"dropdown-mega"))}),j.onclick=function(){var a=this;if(a.classList.toggle("show"),"sidebar"!==f.settings.layout)"collapse"===f.settings.layout&&document.getElementsByClassName(f.classes.collapse)[0].classList.toggle("show");else if(document.getElementsByClassName(f.classes.sidebar)[0].classList.toggle("show"),document.getElementsByClassName(f.classes.overlay)[0].classList.toggle("show"),!document.body.classList.contains("vg-nav-sidebar-open")){var b=window.innerWidth-document.documentElement.clientWidth;document.body.classList.add("vg-nav-sidebar-open"),document.body.style.paddingRight=b+"px"}else document.body.classList.remove("vg-nav-sidebar-open"),document.body.style.paddingRight=0;return!1},k&&(k.onclick=()=>(d(),!1)),l&&(l.onclick=()=>(d(),!1))}dispose(a){function b(a){if(a)for(var b=1;b<=a.length;b++)a[b-1].classList.contains("show")&&a[b-1].classList.remove("show")}for(var c,d=1<arguments.length&&arguments[1]!==void 0?arguments[1]:"dropdown",e=1;e<=a.length;e++)c=a[e-1].getElementsByClassName(d),b(c)}cloneNavigation(a,b){var c=b.cloneNode(!0);c.classList.add(this.classes.cloned),a[0].appendChild(c)}clickable(){var a=document.querySelector(this.container);return!!a.classList.contains(this.classes.hover)&&this.checkResponsiveClass()}checkResponsiveClass(){var a=document.querySelector(this.container);return this.current_responsive_size=a.classList.contains(this.classes.XL)?this.breakpoints.max.xl:a.classList.contains(this.classes.LG)?this.breakpoints.max.lg:a.classList.contains(this.classes.MD)?this.breakpoints.max.md:a.classList.contains(this.classes.SM)?this.breakpoints.max.sm:a.classList.contains(this.classes.XS)?this.breakpoints.max.xs:this.breakpoints.max.xs,window.innerWidth>=this.current_responsive_size}}
 /* ----------
 Navigation Code End
 ---------- */
