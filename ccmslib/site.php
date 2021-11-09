@@ -1,5 +1,6 @@
 <?php
 
+/*
 function load_resource($arg){
 	global $CFG;
 	//echo $CFG["RES"][$arg[0]];
@@ -9,6 +10,7 @@ function load_resource($arg){
 		echo "";
 	}
 }
+*/
 
 
 function navLngList() {
