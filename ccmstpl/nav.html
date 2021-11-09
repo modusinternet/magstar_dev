@@ -287,10 +287,85 @@
 		</nav>
 	</div>
 
-	<script src="/ccmsusr/_js/jquery-3.6.0.min.js" nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}"></script>
-	<script src="/ccmstpl/_js/vgnav.js" nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}"></script>
 	<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
-		new VGNav().toggle();
+		{CCMS_TPL:/_js/footer-js.html}
+
+		/*
+		var l=document.createElement("link");
+		l.rel="stylesheet";
+		l.href = "/ccmstpl/_css/style.css?v=1";
+		var h=document.getElementsByTagName("head")[0];
+		h.parentNode.insertBefore(l,h);
+		*/
+
+		/*
+		Argument details for example_build_css_link() and example_build_js_link() function calls:
+		arg1 = (1 = append AWS link), (empty = do not append AWS link)
+		arg2 = (1 = append language code to link), (empty = do not append language code to link)	In other words, send it through the parser first like a normal template. ie: https://yourdomain.com/en/somefile.css, adding the 'en' will push this template through the parser first before outputting it to the browser.
+		arg3 = a variable found in the config file that represents a partial pathway to the style sheet, not including and details about AWS, language code, or language direction)
+		arg4 = (1 = append language direction to link), (empty = do not append language direction to link)
+		arg5 = Version number, this is very helpful when trying to update files like css and js that don't get called by serviceWorker after they are stored. (empty = do not append '?v=some_number' to the URL.)
+
+		Argument details for example_build_js_sri() function calls:
+		arg1 = 1 = build sri code based on version stored on AWS.  empty = build sri code based on version stored on our own server.
+		arg2 = a variable found in the config file that represents a partial pathway to the style sheet. (Not including details about AWS, language code, or language direction)
+		*/
+
+		{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_css_link("","","CSS-01","","1")}
+
+		function loadJSResources(){
+			loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","MODERNIZER","","")}",function(){
+				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
+					loadFirst("/ccmstpl/_js/vgnav.js",function(){
+						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
+							loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
+
+								var lazyLoad = new LazyLoad({
+									elements_selector:".lazy",
+									cancel_on_exit:true
+								});
+
+								new VGNav().toggle();
+								/*new VGNav({expand: 'md',}).toggle()*/
+
+							});
+						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
+					});
+				}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JQUERY")});
+			}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","MODERNIZER")});
+		}
+
+		/* Carousel START */
+		/*
+		var speed=8000;
+		var carouselIndex=0;
+		var intervalID;
+		function carouselPlus(n){
+			clearInterval(intervalID);
+			carouselIndex+=n;
+			carousel(carouselIndex)
+		}
+		function carousel(n){
+			var i;
+			var carouselArray=document.getElementsByClassName("carousel-item");
+			if(n>carouselArray.length){carouselIndex=1}
+			if(n<1){carouselIndex=carouselArray.length}
+			if(carouselIndex>carouselArray.length){carouselIndex=1}
+			for(i=0;i<carouselArray.length;i++){
+				carouselArray[i].style.opacity="0";
+				carouselArray[i].style.zIndex="0"
+			}
+			window.setTimeout(function(){
+				carouselArray[carouselIndex-1].style.opacity="1";
+				carouselArray[carouselIndex-1].style.zIndex="1"
+			},500);
+			intervalID=window.setInterval(carouselPlus,speed,1)
+		}
+		carouselPlus(1);
+		document.getElementById("carousel-prev").addEventListener("click",function(){carouselPlus(-1)});
+		document.getElementById("carousel-next").addEventListener("click",function(){carouselPlus(1)});
+		*/
+		/* Carousel END */
 	</script>
 </body>
 </html>
