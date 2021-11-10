@@ -333,13 +333,15 @@
 				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","MODERNIZER","","")}",function(){
 					loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
 						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
-							loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
+							/*loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){*/
 								loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","GDPR-JS","","")}",function(){
 
+									/*
 									var lazyLoad = new LazyLoad({
 										elements_selector:".lazy",
 										cancel_on_exit:true
 									});
+									*/
 
 									new VGNav({
 									  expand: 'md',
@@ -349,7 +351,7 @@
 									window.wpcc.init({"colors":{"popup":{"background":"#ffe4e1","text":"#000000","border":"var(--cl3)"},"button":{"background":"var(--cl3)","text":"#ffffff"}},"position":"bottom","padding":"none","fontsize":"tiny","content":{"href":"/{CCMS_LIB:_default.php;FUNC:ccms_lng}/about-us/privacy-policy.html","message":"{CCMS_DB:all,cookie_text}","link":"{CCMS_DB:all,cookie_link}","button":"{CCMS_DB:all,cookie_button}"}})
 
 								}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","GDPR-JS")});
-							});
+							/*});*/
 						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
 					}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JQUERY")});
 				}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","MODERNIZER")});
