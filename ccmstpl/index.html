@@ -2,20 +2,20 @@
 <html lang="{CCMS_LIB:_default.php;FUNC:ccms_lng}" prefix="og: http://ogp.me/ns#">
 	<head>
 		{CCMS_TPL:/head-header.html}
-		<title>{CCMS_DB:all,company-name} | {CCMS_DB:index,title}</title>
+		<title>{CCMS_DB:all,company_name} | {CCMS_DB:index,title}</title>
 		<meta name="description" content="{CCMS_DB:index,description}" />
 
 		<!-- Google / Search Engine Tags -->
-		<meta itemprop="name" content="{CCMS_DB:all,company-name} | {CCMS_DB:index,title}" />
+		<meta itemprop="name" content="{CCMS_DB:all,company_name} | {CCMS_DB:index,title}" />
 		<meta itemprop="description" content="{CCMS_DB:index,description}" />
 
 		<!-- Facebook Meta Tags -->
 		<meta property="og:url" content="https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/en/" />
-		<meta property="og:title" content="{CCMS_DB:all,company-name} | {CCMS_DB:index,title}" />
+		<meta property="og:title" content="{CCMS_DB:all,company_name} | {CCMS_DB:index,title}" />
 		<meta property="og:description" content="{CCMS_DB:index,description}" />
 
 		<!-- Twitter Meta Tags -->
-		<meta name="twitter:title" content="{CCMS_DB:all,company-name} | {CCMS_DB:index,title}" />
+		<meta name="twitter:title" content="{CCMS_DB:all,company_name} | {CCMS_DB:index,title}" />
 		<meta name="twitter:description" content="{CCMS_DB:index,description}" />
 
 		<script type="application/ld+json">
@@ -23,13 +23,13 @@
 				{
 					"@context":"https://schema.org",
 					"@type":"WebSite",
-					"name":"{CCMS_DB:all,company-name}",
+					"name":"{CCMS_DB:all,company_name}",
 					"url":"https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/{CCMS_LIB:_default.php;FUNC:ccms_lng}/",
-					"alternateName":"{CCMS_DB:all,company-name} | {CCMS_DB:index,title}"
+					"alternateName":"{CCMS_DB:all,company_name} | {CCMS_DB:index,title}"
 				},{
 					"@context":"https://schema.org",
 					"@type":"Organization",
-					"name":"{CCMS_DB:all,company-name}",
+					"name":"{CCMS_DB:all,company_name}",
 					"description":"{CCMS_DB:index,description}",
 					"url":"https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/{CCMS_LIB:_default.php;FUNC:ccms_lng}/",
 					"logo":{
