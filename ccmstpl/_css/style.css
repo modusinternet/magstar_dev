@@ -28,7 +28,7 @@ body.vg-nav-sidebar-open{overflow:hidden}.vg-nav{position:relative;z-index:5;wid
 
 /*.vg-nav>ul>li.active a,.vg-nav>ul>li a:hover{color:#236da9}*/
 
-.vg-nav li.active,.vg-nav li a:hover{
+.vg-nav li.active,.vg-nav li:hover{
 	color:var(--cl0)!important;
 	background-color:var(--cl3)!important;
 }
