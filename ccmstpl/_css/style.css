@@ -20,6 +20,10 @@ body.vg-nav-sidebar-open{overflow:hidden}.vg-nav{position:relative;z-index:5;wid
 /* vegasNavigation CSS End */
 
 /* vegasNavigation-theme CSS Start */
+
+
+.vg-nav a{color:var(--cl3)}
+
 .vg-nav>ul>li{padding:20px 25px}
 
 .vg-nav>ul>li>a{display:block;color:#232323;text-decoration:none}
