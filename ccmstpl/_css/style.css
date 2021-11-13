@@ -30,7 +30,7 @@ body.vg-nav-sidebar-open{overflow:hidden}.vg-nav{position:relative;z-index:5;wid
 
 .vg-nav li.active,.vg-nav li a:hover{
 	color:var(--cl0);!important
-	background-color:var(cl3);!important
+	background-color:var(--cl3);!important
 }
 
 
