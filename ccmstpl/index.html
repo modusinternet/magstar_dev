@@ -42,145 +42,6 @@
 		<style nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			{CCMS_TPL:/_css/head-css.html}
 
-
-
-			.cssgrid>.c1{grid-area:c1}
-			.cssgrid>.c2{grid-area:c2}
-			.cssgrid>.c3{grid-area:c3}
-
-			.cssgrid{
-				display:grid;
-				grid-gap:1em;
-				grid-template-areas:
-					"c1"
-					"c2"
-					"c3";
-				text-align:center
-			}
-
-			.cssgrid>.box{
-				background-color:#f7f6f4;
-				border-radius:7px;
-				padding:30px;
-				overflow:hidden
-			}
-
-			.cssgrid-events>.ev1{grid-area:ev1}
-			.cssgrid-events>.ev2{grid-area:ev2}
-			.cssgrid-events>.ev3{grid-area:ev3}
-			.cssgrid-events>.ev4{grid-area:ev4}
-
-			.cssgrid-events{
-				display:grid;
-				grid-gap:1em;
-				grid-template-areas:
-					"ev1"
-					"ev2"
-					"ev3"
-					"ev4"
-			}
-
-			.cssgrid-events>.box{
-				background-color:#fff;
-				border-radius:7px;
-				padding:30px;
-				overflow:hidden
-			}
-
-			.cssgrid-footer>.c1{grid-area:c1}
-			.cssgrid-footer>.c2{grid-area:c2}
-			.cssgrid-footer>.c3{grid-area:c3}
-
-			.cssgrid-footer{
-				display:grid;
-				grid-gap:1em;
-				grid-template-areas:
-					"c1"
-					"c2"
-					"c3";
-				text-align:center
-			}
-
-			.cssgrid-footer form input{
-				border:1px solid rgba(0,0,0,0.1);
-				border-radius:25px;
-				border-top-{CCMS_LIB:site.php;FUNC:lng_dir_left_go_right_right_go_left}-radius:0;
-				border-bottom-{CCMS_LIB:site.php;FUNC:lng_dir_left_go_right_right_go_left}-radius:0;
-				color:#555;
-				font-size:1.2rem;
-				height:48px;
-				padding:0 16px;
-				width:75%
-			}
-
-			.cssgrid-footer form button{
-				background:var(--cl3-tran);
-				border:1px solid rgba(0,0,0,0.1);
-				border-radius:25px;
-				border-top-{CCMS_LIB:site.php;FUNC:lng_dir_right_go_left_left_go_right}-radius:0;
-				border-bottom-{CCMS_LIB:site.php;FUNC:lng_dir_right_go_left_left_go_right}-radius:0;
-				color:#ffffff;
-				font-size:1.2rem;
-				height:48px;
-				padding:0 16px;
-				transition:all 0.25s
-			}
-
-			.cssgrid-footer form button:hover{background:var(--cl3)}
-
-			.svg-footer-icon{
-				max-width:unset;
-				width:40px
-			}
-
-			svg{max-width:100px}
-
-			svg>path{fill:var(--cl3)}
-
-			/* 768px or larger. */
-			@media only screen and (min-width:768px) {
-				.cssgrid-events{
-					grid-template-areas:
-						"ev1 ev2"
-						"ev3 ev4"
-				}
-			}
-
-			/* 824px or larger. Pixel Xl Landscape resolution is 411 x 823. */
-			@media only screen and (min-width: 824px) {
-				.cssgrid-events{
-					grid-gap:1rem;
-					grid-template-areas:
-						"ev1 ev2"
-						"ev3 ev4"
-				}
-			}
-
-			/* 1023px or larger. */
-			@media only screen and (min-width:1023px){
-				.cssgrid{
-					grid-gap:1rem;
-					grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-					grid-template-areas:
-						"c1 c2 c3"
-				}
-
-				.cssgrid-footer{
-					grid-gap:1rem;
-					grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-					grid-template-areas:
-						"c1 c2 c3"
-				}
-
-				.cssgrid-footer>div>em{display:none}
-
-				.cssgrid-footer form input{width:250px}
-			}
-
-
-
-
-
 			/* Carousel CSS START */
 			.carousel{
 				box-shadow:0 2px 12px rgba(0,0,0,.4);
@@ -342,6 +203,83 @@
 				.carousel-small{display:none}
 			}
 			/* Carousel CSS END */
+
+
+			.cssgrid>.c1{grid-area:c1}
+			.cssgrid>.c2{grid-area:c2}
+			.cssgrid>.c3{grid-area:c3}
+
+			.cssgrid{
+				display:grid;
+				grid-gap:1em;
+				grid-template-areas:
+					"c1"
+					"c2"
+					"c3";
+				text-align:center
+			}
+
+			.cssgrid>.box{
+				background-color:#f7f6f4;
+				border-radius:7px;
+				padding:30px;
+				overflow:hidden
+			}
+
+			.cssgrid-events>.ev1{grid-area:ev1}
+			.cssgrid-events>.ev2{grid-area:ev2}
+			.cssgrid-events>.ev3{grid-area:ev3}
+			.cssgrid-events>.ev4{grid-area:ev4}
+
+			.cssgrid-events{
+				display:grid;
+				grid-gap:1em;
+				grid-template-areas:
+					"ev1"
+					"ev2"
+					"ev3"
+					"ev4"
+			}
+
+			.cssgrid-events>.box{
+				background-color:#fff;
+				border-radius:7px;
+				padding:30px;
+				overflow:hidden
+			}
+
+			svg{max-width:100px}
+
+			svg>path{fill:var(--cl3)}
+
+			/* 768px or larger. */
+			@media only screen and (min-width:768px) {
+				.cssgrid-events{
+					grid-template-areas:
+						"ev1 ev2"
+						"ev3 ev4"
+				}
+			}
+
+			/* 824px or larger. Pixel Xl Landscape resolution is 411 x 823. */
+			@media only screen and (min-width: 824px) {
+				.cssgrid-events{
+					grid-gap:1rem;
+					grid-template-areas:
+						"ev1 ev2"
+						"ev3 ev4"
+				}
+			}
+
+			/* 1023px or larger. */
+			@media only screen and (min-width:1023px){
+				.cssgrid{
+					grid-gap:1rem;
+					grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+					grid-template-areas:
+						"c1 c2 c3"
+				}
+			}
 		</style>
 		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			let activeArray_01 = ["lng","lng-{CCMS_LIB:_default.php;FUNC:ccms_lng}"];
