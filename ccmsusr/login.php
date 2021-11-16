@@ -125,6 +125,8 @@ if(isset($_SESSION['EXPIRED']) == "1") {
 } elseif(isset($CLEAN["ccms_pass_reset_part_1"]) == "1") {
 	// Password reset requested.
 
+	$ccms_pass_reset_message["FAIL"] = "";
+
 	if(ccms_badIPCheck($_SERVER["REMOTE_ADDR"])) {
 		$ccms_pass_reset_message["FAIL"] = "There is a problem with your login, your IP Address is currently being blocked.  Please contact the website administrators directly if you feel this message is in error for more information.";
 	} elseif(empty($CLEAN["ccms_pass_reset_part_1_email"])) {
