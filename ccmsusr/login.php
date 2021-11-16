@@ -163,7 +163,7 @@ if(isset($_SESSION['EXPIRED']) == "1") {
 			$headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 			$email_message = "This is a MIME encoded message.\r\n\r\n--" . $boundary . "\r\nContent-type: text/plain;charset=utf-8\r\n\r\n";
 			//Plain text body
-			$email_message .= 'A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not request this email please delete this message.
+			$email_message .= 'A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not submit this request please delete this message.
 
 Either click or copy/paste the following link into your browser to proceed.
 
@@ -182,7 +182,7 @@ $email_message .= "\r\n\r\n--" . $boundary . "\r\nContent-type: text/html;charse
 
 //Html body
 $email_message .= '<html><body style="font-size:1.2em">
-A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not request this email please delete this message.<br>
+A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not submit this request please delete this message.<br>
 <br>
 Either click or copy/paste the following link into your browser to proceed.<br>
 <br>
@@ -230,6 +230,8 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 	}
 } elseif(isset($CLEAN["ccms_pass_reset_part_2"]) == "1") {
 	// The website is being called using the link sent to the users email address.  Now we clean and verify it's authenticity.
+
+	$ccms_pass_reset_message["FAIL"] = "";
 
 	if(ccms_badIPCheck($_SERVER["REMOTE_ADDR"])) {
 		$ccms_pass_reset_message["FAIL"] = "There is a problem with your login, your IP Address is currently being blocked.  Please contact the website administrators directly if you feel this message is in error for more information.";
