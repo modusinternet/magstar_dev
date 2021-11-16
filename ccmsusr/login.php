@@ -319,7 +319,7 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 			$ccms_pass_reset_message["FAIL"] .= " Password reset failed, try again.";
 		}
 	}
-} elseif(isset($CLEAN["ccms_pass_reset_part_2"]) == "2") {
+} elseif(($CLEAN["ccms_pass_reset_part_2"] ?? null) === "2") {
 	// This is an incoming password reset hyperlink.
 
 header("aa_inside: 1");
