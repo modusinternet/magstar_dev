@@ -253,9 +253,6 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 		if($row) {
 			// The recovery link is good but we need to make sure it's not expired.
 
-header("aa_time: " . time());
-header("aa_exp: " . $row["exp"]);
-
 			if(time() >= $row["exp"]) {
 				// The recovery link is expried.  It should be removed.
 
@@ -265,7 +262,11 @@ header("aa_exp: " . $row["exp"]);
 				$CLEAN["ccms_pass_reset_part_2"] = "";
 				// Something was wrong with the ccms_pass_reset_form_code variable.
 
-				$_SESSION["FAIL"] = $_SESSION["FAIL"] + 1;
+				if($_SESSION["FAIL"] ?? null){
+					$_SESSION["FAIL"] = $_SESSION["FAIL"] + 1;
+				} else {
+					$_SESSION["FAIL"] = 1;
+				}
 				// Password reset failed so we increment the fail field by 1, once it reaches 5 the login page wont even be available to the user anymore till their session expires.
 
 				if($_SESSION["FAIL"] >= 5) {
