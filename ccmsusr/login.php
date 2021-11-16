@@ -11,6 +11,9 @@ if($_SERVER["SCRIPT_NAME"] != "/ccmsusr/index.php") {
 	exit;
 }
 
+header("aa_ccms_pass_reset_part_2: " . $CLEAN["ccms_pass_reset_part_2"]);
+
+
 if(isset($_SESSION['EXPIRED']) == "1") {
 	// Session expired
 
