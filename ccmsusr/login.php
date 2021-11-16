@@ -360,7 +360,7 @@ header("aa_inside: 1");
 		}
 	}
 
-header("aa_ccms_pass_reset_message: " . $ccms_pass_reset_message["FAIL"]);
+//header("aa_ccms_pass_reset_message: " . $ccms_pass_reset_message["FAIL"]);
 
 	if($ccms_pass_reset_message["FAIL"] === "") {
 		// This is an password reset submittion, so first we need to make sure the ccms_pass_reset_form_code record is still available.
@@ -381,7 +381,10 @@ header("aa_inside: 3");
 		} else {
 			// The session is valid. Remove the record from the database because they are one time use only.
 
+header("aa_inside: 4");
+
 			$user_id = $row["user_id"];
+
 			$qry = $CFG["DBH"]->prepare("DELETE FROM `ccms_password_recovery` WHERE `id` = :id LIMIT 1;");
 			$qry->execute(array(':id' => $row["id"]));
 			// Confirm there is a live, active, user account under the specified user id.
@@ -595,13 +598,13 @@ if(
 				</div>
 			</div>
 <?php else: ?>
-	<?php if(!empty($ccms_login_message["FAIL"])): ?>
+	<?php if(!empty($ccms_pass_reset_message["FAIL"])): ?>
 			<div class="alertDiv fail">
-				<?php echo $ccms_login_message["FAIL"]; ?>
+				<?php echo $ccms_pass_reset_message["FAIL"]; ?>
 			</div>
-	<?php elseif(!empty($ccms_login_message["SUCCESS"])): ?>
+	<?php elseif(!empty($ccms_pass_reset_message["SUCCESS"])): ?>
 			<div class="alertDiv success">
-				<?php echo $ccms_login_message["SUCCESS"]; ?>
+				<?php echo $ccms_pass_reset_message["SUCCESS"]; ?>
 			</div>
 	<?php endif ?>
 			<div class="formDiv">
