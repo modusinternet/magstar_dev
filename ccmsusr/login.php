@@ -622,7 +622,7 @@ if(
 						<label for="ccms_pass_reset_part_2_pass_2">Re-Type Password <span class="rd">*</span></label>
 						<input class="placeholder" id="ccms_pass_reset_part_2_pass_2" name="ccms_pass_reset_part_2_pass_2" placeholder="Re-Type Password" style="margin-bottom:1rem" type="password" autocomplete="off" readonly>
 						<label id="ccms_pass_reset_part_2_pass_2_error" class="error" for="ccms_pass_reset_part_2_pass_2" style="display:none"></label>
-						<button type="submit">Submit</button>
+						<button type="submit"<?php if(!empty($ccms_pass_reset_message["SUCCESS"])) { echo " disabled";} ?>>Submit</button>
 					</form>
 				</div>
 			</div>
