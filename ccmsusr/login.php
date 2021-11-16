@@ -161,11 +161,9 @@ if(isset($_SESSION['EXPIRED']) == "1") {
 			$headers .= "Content-Type: multipart/alternative;boundary=" . $boundary . "\r\n";
 			$email_message = "This is a MIME encoded message.\r\n\r\n--" . $boundary . "\r\nContent-type: text/plain;charset=utf-8\r\n\r\n";
 			//Plain text body
-			$email_message .= 'To whom it may concern,
+			$email_message .= 'A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not request this email please delete this message.
 
-A password reset was requested for an account at ' . $CFG["DOMAIN"] . ' using this email address. If you did not request this email please delete this message.
-
-Click or Copy and Paste the link bellow into your browser to proceed.
+Either click or copy/paste the following link into your browser to proceed.
 
 https://' . $CFG["DOMAIN"] . '/' . $CLEAN["ccms_lng"] . '/user/?ccms_pass_reset_part_2=1&ccms_pass_reset_form_code='.$a.'
 
@@ -182,11 +180,9 @@ $email_message .= "\r\n\r\n--" . $boundary . "\r\nContent-type: text/html;charse
 
 //Html body
 $email_message .= '<html><body style="font-size:1.2em">
-To whom it may concern,<br>
+A password reset was requested for an account associated with this email address at ' . $CFG["DOMAIN"] . '. If you did not request this email please delete this message.<br>
 <br>
-A password reset was requested for an account at ' . $CFG["DOMAIN"] . ' using this email address. If you did not request this email please delete this message.<br>
-<br>
-Click or Copy and Paste the link bellow into your browser to proceed.<br>
+Either click or copy/paste the following link into your browser to proceed.<br>
 <br>
 <a href="https://' . $CFG["DOMAIN"] . '/' . $CLEAN["ccms_lng"] . '/user/?ccms_pass_reset_part_2=1&ccms_pass_reset_form_code='.$a.'">' . $_SERVER["REQUEST_SCHEME"] . '://' . $CFG["DOMAIN"] . '/' . $CLEAN["ccms_lng"] . '/user/?ccms_pass_reset_part_2=1&ccms_pass_reset_form_code='.$a.'</a><br>
 <br>
@@ -466,19 +462,20 @@ if(
 		.formDiv{
 			background-color:var(--cl0);
 			border:1px solid var(--cl2-tran);
-			border-radius:4px;
-			box-shadow:5px 5px 5px var(--cl12)
+			border-radius:6px;
+			box-shadow:2px 2px 5px 0px rgba(0,0,0,.2)
 		}
+
+		.formDiv>div{padding:10px 20px}
 
 		.formDiv>div:first-child{
 			background-color:var(--cl4);
-			border-radius:4px 4px 0 0;
-			color:var(--cl0);
-			padding:5px 10px
+			border-radius:6px 6px 0 0;
+			color:var(--cl0)
 		}
 
 		.logo{
-			filter:drop-shadow(5px 5px 5px rgba(10,37,64,.5));
+			filter:drop-shadow(3px 3px 3px rgba(10,37,64,0.5));
 			-webkit-transition:all 1.0s ease-in-out;
 			-moz-transition:all 1.0s ease-in-out;
 			-o-transition:all 1.0s ease-in-out;
@@ -534,7 +531,7 @@ if(
 	<?php endif ?>
 			<div class="formDiv">
 				<div>Login</div>
-				<div style="padding:10px">
+				<div>
 					<form action="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/user/" id="ccms_login_form" class="aGrid" method="post" novalidate="novalidate">
 						<input type="hidden" name="ccms_login" value="1">
 						<label for="ccms_login_email">Email Address <span class="rd">*</span></label>
@@ -562,7 +559,7 @@ if(
 	<?php endif ?>
 				<div class="formDiv">
 					<div>Password Reset</div>
-					<div style="padding:10px">
+					<div>
 						<p style="margin-bottom:10px">Please enter the email address associated with your account below. We will send you a link via email you can use to reset your password.</p>
 						<form action="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/user/" id="ccms_pass_reset_part_1" class="aGrid" method="post" novalidate="novalidate">
 							<input type="hidden" name="ccms_pass_reset_part_1" value="1">
@@ -587,7 +584,7 @@ if(
 	<?php endif ?>
 			<div class="formDiv">
 				<div>New Password</div>
-				<div style="padding:10px">
+				<div>
 					<p style="margin-bottom:10px">
 						Use the form below to reset your password. Remember, this form will only work one time.  Once you press submit it will not work again unless you request a new Password Reset link.
 					</p>
