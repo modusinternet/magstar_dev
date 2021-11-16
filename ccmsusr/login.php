@@ -319,8 +319,6 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 } elseif(($CLEAN["ccms_pass_reset_part_2"] ?? null) === "2") {
 	// This is an incoming password reset hyperlink.
 
-header("aa_inside: 1");
-
 	$ccms_pass_reset_message["FAIL"] = "";
 
 	if(ccms_badIPCheck($_SERVER["REMOTE_ADDR"])) {
@@ -365,8 +363,6 @@ header("aa_inside: 1");
 	if($ccms_pass_reset_message["FAIL"] === "") {
 		// This is an password reset submittion, so first we need to make sure the ccms_pass_reset_form_code record is still available.
 
-header("aa_inside: 2");
-
 		$qry = $CFG["DBH"]->prepare("SELECT * FROM `ccms_password_recovery` WHERE `code` = :code AND `ip` = :ip AND `user_agent` = :user_agent LIMIT 1;");
 		$qry->execute(array(':code' => $CLEAN["ccms_pass_reset_form_code"], ':ip' => $_SERVER["REMOTE_ADDR"], ':user_agent' => $_SERVER["HTTP_USER_AGENT"]));
 		$row = $qry->fetch(PDO::FETCH_ASSOC);
@@ -374,14 +370,10 @@ header("aa_inside: 2");
 		if(!$row) {
 			// The ccms_pass_reset_form_code in the URL is either expired, invalid from this device or location.
 
-header("aa_inside: 3");
-
 			$CLEAN["ccms_pass_reset_part_2"] = "";
 			$ccms_pass_reset_message["FAIL"] = "Password reset failed.  This link is expired or invalid from this browser/device/location.  Please request a new password reset Email for this device from this location.";
 		} else {
 			// The session is valid. Remove the record from the database because they are one time use only.
-
-header("aa_inside: 4");
 
 			$user_id = $row["user_id"];
 
