@@ -280,7 +280,11 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 			$CLEAN["ccms_pass_reset_part_2"] = "";
 			// Password reset failed so we increment the fail field by 1, once it reaches 5 the login page wont even be available to the user anymore till their session expires.
 
-			$_SESSION["FAIL"] = $_SESSION["FAIL"] + 1;
+			if($_SESSION["FAIL"] ?? null){
+				$_SESSION["FAIL"] = $_SESSION["FAIL"] + 1;
+			} else {
+				$_SESSION["FAIL"] = 1;
+			}
 
 			if($_SESSION["FAIL"] >= 5) {
 				// Maximum number of fails for this session have been reached.  Do not accept anymore tries till this session record expires.
