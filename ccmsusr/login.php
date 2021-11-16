@@ -358,6 +358,8 @@ header("aa_inside: 1");
 		}
 	}
 
+header("aa_ccms_pass_reset_message: " . $ccms_pass_reset_message["FAIL"]);
+
 	if(($ccms_pass_reset_message["FAIL"] ?? null) === "") {
 		// This is an password reset submittion, so first we need to make sure the ccms_pass_reset_form_code record is still available.
 
