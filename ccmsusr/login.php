@@ -321,6 +321,8 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 
 header("aa_inside: 1");
 
+	$ccms_pass_reset_message["FAIL"] = "";
+
 	if(ccms_badIPCheck($_SERVER["REMOTE_ADDR"])) {
 		$ccms_pass_reset_message["FAIL"] = "There is a problem with your login, your IP Address is currently being blocked.  Please contact the website administrators directly if you feel this message is in error for more information.";
 	//} elseif($CLEAN["ccms_pass_reset_form_code"] == "") {
@@ -360,7 +362,7 @@ header("aa_inside: 1");
 
 header("aa_ccms_pass_reset_message: " . $ccms_pass_reset_message["FAIL"]);
 
-	if($ccms_pass_reset_message["FAIL"] ?? null) {
+	if($ccms_pass_reset_message["FAIL"] === "") {
 		// This is an password reset submittion, so first we need to make sure the ccms_pass_reset_form_code record is still available.
 
 header("aa_inside: 2");
