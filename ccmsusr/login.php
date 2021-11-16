@@ -253,6 +253,9 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 		if($row) {
 			// The recovery link is good but we need to make sure it's not expired.
 
+header("aa_time: " . time());
+header("aa_exp: " . $row["exp"]);
+
 			if(time() >= $row["exp"]) {
 				// The recovery link is expried.  It should be removed.
 
