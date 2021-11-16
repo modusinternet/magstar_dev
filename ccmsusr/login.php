@@ -231,7 +231,7 @@ $email_message .= "\r\n\r\n--" . $boundary . "--";
 			$ccms_pass_reset_message["FAIL"] .= "Password reset failed, please try again.";
 		}
 	}
-} elseif(isset($CLEAN["ccms_pass_reset_part_2"]) == "1") {
+} elseif(($CLEAN["ccms_pass_reset_part_2"] ?? null) === "1") {
 	// The website is being called using the link sent to the users email address.  Now we clean and verify it's authenticity.
 
 	$ccms_pass_reset_message["FAIL"] = "";
