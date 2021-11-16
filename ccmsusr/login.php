@@ -11,9 +11,6 @@ if($_SERVER["SCRIPT_NAME"] != "/ccmsusr/index.php") {
 	exit;
 }
 
-header("aa_ccms_pass_reset_part_2: " . $CLEAN["ccms_pass_reset_part_2"]);
-
-
 if(isset($_SESSION['EXPIRED']) == "1") {
 	// Session expired
 
@@ -361,7 +358,7 @@ header("aa_inside: 1");
 		}
 	}
 
-	if($ccms_pass_reset_message["FAIL"] == "") {
+	if(($ccms_pass_reset_message["FAIL"] ?? ) === "") {
 		// This is an password reset submittion, so first we need to make sure the ccms_pass_reset_form_code record is still available.
 
 header("aa_inside: 2");
