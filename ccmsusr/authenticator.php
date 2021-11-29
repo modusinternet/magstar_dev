@@ -281,6 +281,7 @@ if(($_POST["ccms_auth_token_login"] ?? null) === "1") {
 		if($result == "3") {
 
 			$_SESSION["2FA_VALID"] = true;
+			$_SESSION["PRIV"] = $row["priv"];
 			$_SESSION["FAIL"] = 0;
 			$_SESSION["HTTP_USER_AGENT"] = md5($_SERVER["HTTP_USER_AGENT"]);
 			header("Location: /" . $CLEAN["ccms_lng"] . "/user/" . $CFG["INDEX"]);
