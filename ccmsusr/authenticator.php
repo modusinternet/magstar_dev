@@ -286,7 +286,7 @@ if(($_POST["ccms_auth_token_login"] ?? null) === "1") {
 			header("Location: /" . $CLEAN["ccms_lng"] . "/user/" . $CFG["INDEX"]);
 			exit;
 		} else {
-			
+
 			$_SESSION["FAIL"] = $_SESSION["FAIL"] + 1;
 			$ccms_auth_token_error["FAIL"] = "Login failed, try again.";
 		}
