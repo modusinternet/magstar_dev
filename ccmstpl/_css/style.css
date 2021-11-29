@@ -91,7 +91,7 @@ body.vg-nav-sidebar-open{overflow:hidden}.vg-nav{position:relative;z-index:5;wid
 
 .vg-nav .dropdown ul li a{text-decoration:none;display:block;padding:15px;color:#232323;border:1px solid rgba(0,0,0,0.1);border-top:none}
 
-.vg-nav .dropdown ul li a:hover{color:inherit}
+.vg-nav .dropdown ul li a.active,.vg-nav .dropdown ul li a:hover{color:inherit}
 
 .vg-nav .dropdown ul li:first-child a{border:1px solid rgba(0,0,0,0.1)}
 
