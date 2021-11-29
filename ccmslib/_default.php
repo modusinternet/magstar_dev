@@ -119,7 +119,7 @@ function ccms_canonical() {
 
 
 function ccms_user_admin_slider() {
-	global $CFG, $CLEAN, $_SESSION;
+	global $CFG, $CLEAN;
 
 	if(isset($_SESSION["USER_ID"])) {
 		$json_a = json_decode($_SESSION["PRIV"], true);

@@ -58,17 +58,27 @@ define('UTF8_STRING_DIGIT_PUNC_WHITE', '/^[\pL\pM*+\pN\pP\s]*\z/u');
 // \z End of subject or newline at end. (Better then $ because $ does not include /n characters at the end of a line.)
 // /u Pattern strings are treated as UTF-8
 
+define('WHOLE_NUMBER', '/^[\pN]*\z/');
+// ^		Start of line
+// [		Starts the character class.
+// \pN		Any number.
+// ]		Ends the character class.
+// *		Zero or more
+// \z		End of subject or newline at end. (Better then $ because $ does not include /n characters at the end of a line.)
+// /		End of the Pattern.
+
 $ccms_whitelist = array(
-	"ccms_lngSelect"				=> array("type" => "LNG",											"maxlength" => 5),
-	"ccms_parms"						=> array("type" => "PARMS",										"maxlength" => 128),
-	"ccms_tpl"							=> array("type" => "TPL",											"maxlength" => 256),
-	"ccms_session"					=> array("type" => "SESSION_ID",							"maxlength" => 64),
-	"ccms_cid"							=> array("type" => "SESSION_ID",							"maxlength" => 64),
-	"ccms_lng"							=> array("type" => "LNG",											"maxlength" => 5),
-	"ccms_token"						=> array("type" => "UTF8_STRING_DIGIT_WHITE",	"maxlength" => 64),
-	"HTTP_COOKIE"						=> array("type" => "HTTP_COOKIE",							"maxlength" => 512),
-	"HTTP_USER_AGENT"				=> array("type" => "HTTP_USER_AGENT",					"maxlength" => 512),
-	"QUERY_STRING"					=> array("type" => "QUERY_STRING",						"maxlength" => 1024)
+	"ccms_ajax_flag"	=> array("type" => "WHOLE_NUMBER",				"maxlength" => 1),
+	"ccms_lngSelect"	=> array("type" => "LNG",						"maxlength" => 5),
+	"ccms_parms"		=> array("type" => "PARMS",						"maxlength" => 128),
+	"ccms_tpl"			=> array("type" => "TPL",						"maxlength" => 256),
+	"ccms_session"		=> array("type" => "SESSION_ID",				"maxlength" => 64),
+	"ccms_cid"			=> array("type" => "SESSION_ID",				"maxlength" => 64),
+	"ccms_lng"			=> array("type" => "LNG",						"maxlength" => 5),
+	"ccms_token"		=> array("type" => "UTF8_STRING_DIGIT_WHITE",	"maxlength" => 64),
+	"HTTP_COOKIE"		=> array("type" => "HTTP_COOKIE",				"maxlength" => 512),
+	"HTTP_USER_AGENT"	=> array("type" => "HTTP_USER_AGENT",			"maxlength" => 512),
+	"QUERY_STRING"		=> array("type" => "QUERY_STRING",				"maxlength" => 1024)
 );
 
 
@@ -146,8 +156,8 @@ function CCMS_Set_LNG() {
 					$qry->execute(array(':user_id' => $_SESSION["USER_ID"]));
 					$row = $qry->fetch(PDO::FETCH_ASSOC);
 					$json_a = json_decode($row["priv"], true);
-					if($row["super"] === "1" || $json_a[priv][content_manager][r] === "1") {
-						if($row["super"] === "1" || $json_a[priv][content_manager][lng][$key] === "1" || $json_a[priv][content_manager][lng][$key] === "2") {
+					if($row["super"] == "1" || $json_a["priv"]["content_manager"]["r"] == 1) {
+						if($row["super"] == "1" || $json_a["priv"]["content_manager"]["lng"][$key] == 1 || $json_a["priv"]["content_manager"]["lng"][$key] == 2) {
 							$CFG["CCMS_LNG_DIR"] = $value["dir"];
 							$CFG["lngCodeActiveFlag"] = true;
 						}
@@ -314,6 +324,7 @@ function CCMS_Set_SESSION() {
 				// The user is valid and nothing is outstanding so just update the most current privilages.
 
 				$_SESSION["2FA_VALID"] = null;
+				$_SESSION["ALIAS"] = $row["alias"];
 				$_SESSION["PRIV"] = $row["priv"];
 			}
 		} else {
@@ -466,6 +477,9 @@ function CCMS_Filter($input, $whitelist) {
 					case "UTF8_STRING_DIGIT_PUNC_WHITE":
 						$buf = (preg_match(UTF8_STRING_DIGIT_PUNC_WHITE, $value)) ? $value : "INVAL";
 						break;
+					case "WHOLE_NUMBER":
+						$buf = (preg_match(WHOLE_NUMBER, $value)) ? $value : "INVAL";
+						break;
 				}
 			}
 			$CLEAN[$key] = $buf;
@@ -512,12 +526,7 @@ function CCMS_DB_Dir($a) {
 			}
 		} else {
 			// Not editable on the public side.
-
-			// I need to work on this section when I get back to fixing the public side editing of content.  I get errors in this area when testsing on Ivo's system.
-
-			//if($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] != "") {
-			//if($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] ?? null) {
-			if(($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] ?? null) !== "") {
+			if($CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["content"] != "") {
 				echo $CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CLEAN["ccms_lng"]]["dir"];
 			} else {
 				echo $CLEAN["CCMS_DB_Preload_Content"][$a[2]][$a[3]][$CFG["DEFAULT_SITE_CHAR_SET"]]["dir"];
