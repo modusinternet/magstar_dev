@@ -337,7 +337,7 @@ if(!(($_SERVER["SCRIPT_NAME"] == "/index.php") || ($_SERVER["SCRIPT_NAME"] == "/
 
 		<!-- Welcome  -->
 		<div id="tab01Content" class="tabContent">
-			<h1>Welcome to Custodian CMS (CCMS) Setup</h1>
+			<h1>Welcome to the Custodian CMS (CCMS) Setup Template</h1>
 			<p><span class="oj">@Version <?=$CFG["VERSION"];?> (Release Date: <?=$CFG["RELEASE_DATE"];?>)</span>.<br>
 				This page is designed to test your server environment, check your configuration file, import example database content and establish your first administrator.  Once everything is properly configured and the setup process is complete you need to <span class="oj">rename or remove</span> the <span class="oj">/ccms-setup.php</span> file from the server to continue</span>.</p>
 			<p>For more information visit <a class="oj" style="word-wrap:break-word" href="https://custodiancms.org" target="_blank">https://custodiancms.org</a></p>
@@ -348,7 +348,7 @@ if(!(($_SERVER["SCRIPT_NAME"] == "/index.php") || ($_SERVER["SCRIPT_NAME"] == "/
 			<h1>Instructions</h1>
 			<p>To fully activate your new templates you need to manually complete the following steps.  We do not automate most of this process in order to make sure it never becomes a target for hackers.  The following shows the test order and a brief description of what is needed to pass each test.  If you are familiar with the steps listed below click the <a class="oj" onclick="document.getElementById('tab03Title')?.click();" href="#">Setup Results</a> tab to see your results now.</p>
 			<ol style="margin-left:40px">
-				<li>Custodian CMS requires PHP v5.6+ and MySQL v5.5.3+ to run properly.</li>
+				<li>Custodian CMS requires PHP v7.0+ and MySQL v5.5.3+ to run properly.</li>
 				<li>Make a copy of the <span class="oj">/ccmspre/config_original.php</span> file and save it as <span class="oj">/ccmspre/config.php</span>.  Then update it with all your domain name and database settings.</li>
 				<li>Make a copy of the <span class="oj">/ccmspre/whitelist_public_original.php</span> file and save it as <span class="oj">/ccmspre/whitelist_public.php</span>.</li>
 				<li>Make a copy of the <span class="oj">/ccmspre/whitelist_user_original.php</span> file and save it as <span class="oj">/ccmspre/whitelist_user.php</span>.</li>
@@ -364,9 +364,9 @@ if(!(($_SERVER["SCRIPT_NAME"] == "/index.php") || ($_SERVER["SCRIPT_NAME"] == "/
 			<h1>Results</h1>
 			<p>Click any of the colored bars below to learn more about each test.</p>
 
-<?php if(version_compare(phpversion(),'5.6','>=')) {$CFG["pass"]=1;} else {$CFG["pass"]=0;}?>
+<?php if(version_compare(phpversion(),'7.0','>=')) {$CFG["pass"]=1;} else {$CFG["pass"]=0;}?>
 			<div class="collapsible <?=($CFG["pass"]==1) ? "gr":"rd";?>">
-				Test for minimum <span class="oj">PHP v5.6+</span>
+				Test for minimum <span class="oj">PHP v7.0+</span>
 			</div>
 			<div class="collContent">
 <?php if($CFG["pass"]==1): ?>
