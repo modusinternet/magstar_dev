@@ -760,6 +760,10 @@ function CCMS_Main() {
 	// Make into:
 	// /index.html
 	// /index.html
+
+header("asdf: " . $CLEAN["ccms_tpl"]);
+exit;
+
 	if(!isset($CLEAN["ccms_tpl"]) || $CLEAN["ccms_tpl"] === "" || $CLEAN["ccms_tpl"] === "/") {
 		$CLEAN["ccms_tpl"] = "/" . $CFG["INDEX"];
 	}
