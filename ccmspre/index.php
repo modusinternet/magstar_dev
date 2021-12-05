@@ -781,7 +781,11 @@ function CCMS_Main() {
 	// /fruit/orange/index
 	// /fruit/orange/vitamin/index
 	if(preg_match("/[\/]\z/", $CLEAN["ccms_tpl"])) {
-		$CLEAN["ccms_tpl"] .= "index.php";
+		//$CLEAN["ccms_tpl"] .= "index.html";
+		$CLEAN["ccms_tpl"] .= $CFG["INDEX"];
+
+
+
 
 header("asdf: " . $CLEAN["ccms_tpl"]);
 exit;
