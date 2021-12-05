@@ -1,0 +1,169 @@
+{CCMS_DB_PRELOAD:all,about-us}<!DOCTYPE html>
+<html lang="{CCMS_LIB:_default.php;FUNC:ccms_lng}" prefix="og: http://ogp.me/ns#">
+	<head>
+		{CCMS_TPL:/head-header.html}
+		<title>{CCMS_DB:all,company_name} | {CCMS_DB:about-us,title}</title>
+		<meta name="description" content="{CCMS_DB:about-us,description}" />
+
+		<!-- Google / Search Engine Tags -->
+		<meta itemprop="name" content="{CCMS_DB:all,company_name} | {CCMS_DB:about-us,title}" />
+		<meta itemprop="description" content="{CCMS_DB:about-us,description}" />
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/en/" />
+		<meta property="og:title" content="{CCMS_DB:all,company_name} | {CCMS_DB:about-us,title}" />
+		<meta property="og:description" content="{CCMS_DB:about-us,description}" />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:title" content="{CCMS_DB:all,company_name} | {CCMS_DB:about-us,title}" />
+		<meta name="twitter:description" content="{CCMS_DB:about-us,description}" />
+
+		<script type="application/ld+json">
+			[
+				{
+					"@context":"https://schema.org",
+					"@type":"WebSite",
+					"name":"{CCMS_DB:all,company_name}",
+					"url":"https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/{CCMS_LIB:_default.php;FUNC:ccms_lng}/",
+					"alternateName":"{CCMS_DB:all,company_name} | {CCMS_DB:about-us,title}"
+				},{
+					"@context":"https://schema.org",
+					"@type":"Organization",
+					"name":"{CCMS_DB:all,company_name}",
+					"description":"{CCMS_DB:about-us,description}",
+					"url":"https://{CCMS_LIB:_default.php;FUNC:ccms_cfgDomain}/{CCMS_LIB:_default.php;FUNC:ccms_lng}/",
+					"logo":{
+						"@type":"ImageObject",
+						"url":"/ccmstpl/_img/logo.png"
+					}{CCMS_TPL:/schema.html}
+				}
+			]
+		</script>
+		<style nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
+			{CCMS_TPL:/_css/head-css.html}
+
+			.breadCrumbGrid>.c1{grid-area:c1}
+			.breadCrumbGrid>.c2{grid-area:c2}
+			.breadCrumbGrid>.c3{grid-area:c3}
+
+			.breadCrumbGrid{
+				display:grid;
+				grid-template-areas:
+					"c1"
+					"c2"
+					"c3";
+				padding:10px
+			}
+
+			/* 768px or larger. */
+			@media only screen and (min-width:768px){
+				/*==========
+				BEGINNING of tags found in the MAIN tag
+				==========*/
+				.breadCrumbGrid{
+					grid-template-columns:40% auto 40%;
+					grid-template-areas:
+						"c1 c2 c3"
+				}
+				/*==========
+				END of tags found in the MAIN tag
+				==========*/
+			}
+		</style>
+		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
+			let activeArray_01 = ["lng","lng-{CCMS_LIB:_default.php;FUNC:ccms_lng}","nl-about-us"];
+			/* let activeArray_02 = ["fl-homepage"]; */
+		</script>
+	</head>
+
+	<body>
+		<div id="loading_svg"></div>
+
+		<main style="margin-top:500px">
+			<div class="parallax about-us_01"></div>
+			<div style="padding-bottom:15px">
+				<div class="breadCrumbGrid" dir="{CCMS_LIB:_default.php;FUNC:ccms_lng_dir}">
+					<h1 class="c1">About Us</h1>
+					<i class="c2"></i>
+					<h4 class="c3" style="margin:8px 0 0">
+						<a dir="{CCMS_DB_DIR:all,homepage}" href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/">{CCMS_DB:all,homepage}</a> <span style="color:#888888">/</span> <a dir="{CCMS_DB_DIR:all,about-us}" href="/{CCMS_LIB:_default.php;FUNC:ccms_lng}/about-us/">{CCMS_DB:all,about-us}</a>
+					</h4>
+				</div>
+			</div>
+
+
+
+			<div class="contentType1">
+				<div>
+					<p dir="{CCMS_DB_DIR:about-us,txt-01:1}">{CCMS_DB:about-us,txt-01}</p>
+				</div>
+			</div>
+			{CCMS_TPL:/footer.html}
+		</main>
+
+		{CCMS_TPL:/body-header.html}
+
+		{CCMS_TPL:/a2hs-box.html}
+
+		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
+			{CCMS_TPL:/_js/footer-js.html}
+
+			/*
+			var l=document.createElement("link");
+			l.rel="stylesheet";
+			l.href = "/ccmstpl/_css/style.css?v=1";
+			var h=document.getElementsByTagName("head")[0];
+			h.parentNode.insertBefore(l,h);
+			*/
+
+			/*
+			Argument details for example_build_css_link() and example_build_js_link() function calls:
+			arg1 = (1 = append AWS link), (empty = do not append AWS link)
+			arg2 = (1 = append language code to link), (empty = do not append language code to link)	In other words, send it through the parser first like a normal template. ie: https://yourdomain.com/en/somefile.css, adding the 'en' will push this template through the parser first before outputting it to the browser.
+			arg3 = a variable found in the config file that represents a partial pathway to the style sheet, not including and details about AWS, language code, or language direction)
+			arg4 = (1 = append language direction to link), (empty = do not append language direction to link)
+			arg5 = Version number, this is very helpful when trying to update files like css and js that don't get called by serviceWorker after they are stored. (empty = do not append '?v=some_number' to the URL.)
+
+			Argument details for example_build_js_sri() function calls:
+			arg1 = 1 = build sri code based on version stored on AWS.  empty = build sri code based on version stored on our own server.
+			arg2 = a variable found in the config file that represents a partial pathway to the style sheet. (Not including details about AWS, language code, or language direction)
+			*/
+
+			{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_css_link("","","CSS-01","","")}
+			{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_css_link("","","GDPR-CSS","","")}
+
+			function loadJSResources(){
+				loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","MODERNIZER","","")}",function(){
+					loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JQUERY","","")}",function(){
+						loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","JS-01","","")}",function(){
+							loadFirst("/ccmstpl/_js/lazyload-17.4.0.min.js",function(){
+								loadFirst("{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_link("","","GDPR-JS","","")}",function(){
+
+									/* https://github.com/verlok/vanilla-lazyload */
+									var lazyLoad = new LazyLoad({
+										elements_selector:".lazy",
+										cancel_on_exit:true
+									});
+
+									new VGNav({
+									  expand: 'md',
+									}).toggle();
+
+									/* General Data Protection Regulation (GDPR) Cookie Consent Banner */
+									window.wpcc.init({"colors":{"popup":{"background":"var(--cl0)","text":"#000000","border":"var(--cl3)"},"button":{"background":"var(--cl3)","text":"#ffffff"}},"position":"bottom","padding":"none","fontsize":"tiny","content":{"href":"/{CCMS_LIB:_default.php;FUNC:ccms_lng}/about-us/privacy-policy.html","message":"{CCMS_DB:all,cookie_text}","link":"{CCMS_DB:all,cookie_link}","button":"{CCMS_DB:all,cookie_button}"}})
+
+								}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","GDPR-JS")});
+							});
+						}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JS-01")});
+					}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","JQUERY")});
+				}{CCMS_LIB:examples/xyzzy.php;FUNC:example_build_js_sri("","MODERNIZER")});
+			}
+
+			if(window.addEventListener){
+				window.addEventListener("load",loadJSResources,false);
+			}else if(window.attachEvent){
+				window.attachEvent("onload",loadJSResources);
+			}else{window.onload=loadJSResources;}
+		</script>
+	</body>
+</html>
