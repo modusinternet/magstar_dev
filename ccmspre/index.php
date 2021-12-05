@@ -761,8 +761,7 @@ function CCMS_Main() {
 	// /index.html
 	// /index.html
 
-header("asdf: " . $CLEAN["ccms_tpl"]);
-exit;
+
 
 	if(!isset($CLEAN["ccms_tpl"]) || $CLEAN["ccms_tpl"] === "" || $CLEAN["ccms_tpl"] === "/") {
 		$CLEAN["ccms_tpl"] = "/" . $CFG["INDEX"];
@@ -783,6 +782,10 @@ exit;
 	// /fruit/orange/vitamin/index
 	if(preg_match("/[\/]\z/", $CLEAN["ccms_tpl"])) {
 		$CLEAN["ccms_tpl"] .= "index.php";
+
+header("asdf: " . $CLEAN["ccms_tpl"]);
+exit;
+
 	}
 
 	// Copys the end of the string found inside $CLEAN["ccms_tpl"] after the last /.
