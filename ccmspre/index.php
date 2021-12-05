@@ -787,8 +787,8 @@ function CCMS_Main() {
 
 
 
-header("asdf: " . $CLEAN["ccms_tpl"]);
-exit;
+//header("asdf: " . $CLEAN["ccms_tpl"]);
+//exit;
 
 	}
 
