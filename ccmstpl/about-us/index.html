@@ -55,9 +55,19 @@
 				padding:10px
 			}
 
-			.no-webp .about-us_index-01{background-image:url("{CCMS_LIB:site.php;FUNC:load_resource("AWS")}/ccmstpl/_img/about-us/index-01.jpg")}
+			.no-webp .about-us_index-01{background-image:url("/ccmstpl/_img/about-us/index-01.jpg")}
 
-			.webp .about-us-index_01{background-image:url("{CCMS_LIB:site.php;FUNC:load_resource("AWS")}/ccmstpl/_img/about-us/index-01.webp")}
+			.parallax {
+				background-attachment:scroll;
+				background-position:center;
+				background-repeat:no-repeat;
+				background-size:cover;
+				box-shadow:0 2px 12px rgba(136,136,136,.5) inset;
+				margin-bottom:15px;
+				min-height:600px;
+			}
+
+			.webp .about-us-index_01{background-image:url("/ccmstpl/_img/about-us/index-01.webp")}
 
 			/* 768px or larger. */
 			@media only screen and (min-width:768px){
