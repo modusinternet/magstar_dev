@@ -12,6 +12,25 @@ function load_resource($arg){
 }
 */
 
+function lng_dir_left_go_right_right_go_left() {
+	global $CFG;
+	if($CFG["CCMS_LNG_DIR"] == "ltr") {
+		echo "right";
+	} else {
+		echo "left";
+	}
+}
+
+
+function lng_dir_right_go_left_left_go_right() {
+	global $CFG;
+	if($CFG["CCMS_LNG_DIR"] == "ltr") {
+		echo "left";
+	} else {
+		echo "right";
+	}
+}
+
 
 function navLngList() {
 	global $CFG, $CLEAN;
