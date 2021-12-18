@@ -63,8 +63,8 @@ if(!is_callable('shell_exec') && true === stripos(ini_get('disable_functions'), 
 		<meta charset="utf-8">
 		<title>GitHub</title>
 		<meta name="description" content="" />
-		{CCMS_TPL:header-head.html}
-		<script>
+		{CCMS_TPL:head-meta.html}
+		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			var navActiveArray = ["github"];
 		</script>
 	</head>
@@ -200,7 +200,7 @@ if(!is_callable('shell_exec') && true === stripos(ini_get('disable_functions'), 
 			</div>
 		</div>
 
-		<script>
+		<script nonce="{CCMS_LIB:_default.php;FUNC:ccms_csp_nounce}">
 			function loadFirst(e,t){var a=document.createElement("script");a.async = true;a.readyState?a.onreadystatechange=function(){("loaded"==a.readyState||"complete"==a.readyState)&&(a.onreadystatechange=null,t())}:a.onload=function(){t()},a.src=e,document.body.appendChild(a)}
 
 			var cb = function() {
@@ -227,11 +227,11 @@ if(!is_callable('shell_exec') && true === stripos(ini_get('disable_functions'), 
 			else window.addEventListener('load', cb);
 
 			function loadJSResources() {
-				loadFirst("/ccmsusr/_js/jquery-2.2.0.min.js", function() { /* JQuery is loaded */
-					loadFirst("/ccmsusr/_js/bootstrap-3.3.7.min.js", function() { /* Bootstrap is loaded */
-						loadFirst("/ccmsusr/_js/metisMenu-2.4.0.min.js", function() { /* MetisMenu JavaScript */
-							/*loadFirst("/ccmsusr/_js/custodiancms.js", function() { /* CustodianCMS JavaScript */
-							loadFirst("/ccmsusr/_js/custodiancms.min.js", function() { /* CustodianCMS JavaScript */
+				/*loadFirst("/ccmsusr/_js/jquery-2.2.0.min.js", function() {*/
+				loadFirst("/ccmsusr/_js/jquery-3.6.0.min.js", function() {
+					loadFirst("/ccmsusr/_js/bootstrap-3.3.7.min.js", function() {
+						loadFirst("/ccmsusr/_js/metisMenu-3.0.7.min.js", function() {
+							loadFirst("/ccmsusr/_js/custodiancms.js", function() {
 
 								navActiveArray.forEach(function(s) {$("#"+s).addClass("active");});
 
