@@ -2,8 +2,8 @@
 // benchmark start
 //$time_start = microtime(true);
 
-echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
-exit;
+//echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
+//exit;
 
 // Use the ini_set function to set value of the include_path option on your server if necessary.
 // e.g.: ini_set('include_path', 'ccmslib:ccmspre:ccmstpl:ccmsusr' . ini_get('include_path'));
@@ -46,8 +46,8 @@ CCMS_Public_Filter($_SERVER + $_REQUEST, $whitelist);
 
 CCMS_Set_SESSION();
 
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-exit;
+//echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+//exit;
 
 CCMS_Main();
 
