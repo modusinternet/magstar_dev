@@ -43,6 +43,8 @@ CCMS_Public_Filter($_SERVER + $_REQUEST, $whitelist);
 
 CCMS_Set_SESSION();
 
+echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+
 CCMS_Main();
 
 // benchmark end
