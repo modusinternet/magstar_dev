@@ -1004,6 +1004,9 @@ function CCMS_Main() {
 			} else {
 				// Cache setting in config NOT ENABLED.
 
+echo "cache not enabled, looking for: ".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"];
+exit;
+
 				if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"])) {
 
 					$found = true;
