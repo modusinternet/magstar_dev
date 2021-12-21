@@ -19,7 +19,7 @@ ErrorDocument 403 /index.php?ccms_tpl=error403
 
 # Not Found
 # ------------------------------
-#ErrorDocument 404 /index.php?ccms_tpl=error404
+ErrorDocument 404 /index.php?ccms_tpl=error404
 
 # Internal Server Error
 # ------------------------------
