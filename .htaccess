@@ -176,7 +176,7 @@ AddOutputFilterByType DEFLATE application/x-javascript
 
 
 
-RewriteRule ^(.*)$ /index.php?ccms_lng=en&ccms_tpl=_css/style.css [L,QSA]
+RewriteRule ^(.*)$ /index.php?ccms_lng=en&ccms_tpl=/_css/style.css [L,QSA]
 
 
 
