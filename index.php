@@ -2,9 +2,12 @@
 // benchmark start
 //$time_start = microtime(true);
 
-<pre><?php print_r($_SERVER); ?></pre>
+echo "<pre>";
+print_r($_SERVER);
+echo "</pre>";"
+
 //echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
-//exit;
+exit;
 
 // Use the ini_set function to set value of the include_path option on your server if necessary.
 // e.g.: ini_set('include_path', 'ccmslib:ccmspre:ccmstpl:ccmsusr' . ini_get('include_path'));
