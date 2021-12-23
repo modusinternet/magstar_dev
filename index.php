@@ -2,6 +2,7 @@
 // benchmark start
 //$time_start = microtime(true);
 
+<pre><?php print_r($_SERVER); ?></pre>
 //echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
 //exit;
 
