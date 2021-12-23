@@ -176,7 +176,8 @@ AddOutputFilterByType DEFLATE application/x-javascript
 
 
 #RewriteRule ^(.*)$ info.php [L,QSA]
- RewriteRule ^(.*)$ info.php?arg0=val0&arg1=val1 [L,QSA]
+#RewriteRule ^(.*)$ info.php?arg0=val0&arg1=val1 [L,QSA]
+ RewriteRule ^(([a-z]{2,3})(-[a-z0-9]{2,3})?)(/([a-z0-9-_\./]*))?$ /info.php [L,QSA]
 
 
 
