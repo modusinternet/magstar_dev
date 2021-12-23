@@ -1,1 +1,1 @@
-<?php print_r($_SERVER); ?>
+<pre><?php print_r($_SERVER); ?></pre>
