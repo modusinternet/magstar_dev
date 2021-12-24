@@ -782,25 +782,6 @@ function CCMS_Main() {
 		$CLEAN["ccms_tpl"] .= "index.html";
 	}
 
-
-
-	/*
-	echo "<pre>";
-	print_r($CLEAN);
-	echo "</pre>";
-	echo "<pre>";
-	print_r($_REQUEST);
-	echo "</pre>";
-	echo "<pre>";
-	print_r($_SERVER);
-	echo "</pre>";
-	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-	*/
-	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-	exit;
-
-
-
 	// Copys the end of the string found inside $CLEAN["ccms_tpl"] after the last /.
 	// fruit/orange
 	// becomes:
@@ -1022,6 +1003,25 @@ function CCMS_Main() {
 				}
 			} else {
 				// Cache setting in config NOT ENABLED.
+
+
+
+/*
+echo "<pre>";
+print_r($CLEAN);
+echo "</pre>";
+echo "<pre>";
+print_r($_REQUEST);
+echo "</pre>";
+echo "<pre>";
+print_r($_SERVER);
+echo "</pre>";
+echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+*/
+echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+exit;
+
+
 
 				if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"])) {
 
