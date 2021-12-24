@@ -753,6 +753,30 @@ function CCMS_TPL_Parser($a = null) {
 function CCMS_Main() {
 	global $CFG, $CLEAN;
 
+
+
+
+
+	echo "<pre>";
+	print_r($CFG);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	//echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
+	exit;
+
+
+
+
+
+
 	// If there is no template requested, show $CFG["INDEX"].
 	// This code is used when accessing the /user/ templates, before login credentials have between
 	// verified and when dealing with URL's that resemble:
