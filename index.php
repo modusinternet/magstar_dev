@@ -3,6 +3,9 @@
 //$time_start = microtime(true);
 
 echo "<pre>";
+print_r($_REQUEST);
+echo "</pre>";
+echo "<pre>";
 print_r($_SERVER);
 echo "</pre>";
 //echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
