@@ -757,6 +757,7 @@ function CCMS_Main() {
 
 
 
+	/*
 	echo "<pre>";
 	print_r($CLEAN);
 	echo "</pre>";
@@ -766,7 +767,9 @@ function CCMS_Main() {
 	echo "<pre>";
 	print_r($_SERVER);
 	echo "</pre>";
-	//echo "ccms_tpl=[".$_REQUEST["ccms_tpl"]."]";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
 	exit;
 
 
