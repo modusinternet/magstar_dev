@@ -758,9 +758,6 @@ function CCMS_Main() {
 
 
 	echo "<pre>";
-	print_r($CFG);
-	echo "</pre>";
-	echo "<pre>";
 	print_r($CLEAN);
 	echo "</pre>";
 	echo "<pre>";
