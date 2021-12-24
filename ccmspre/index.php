@@ -765,25 +765,6 @@ function CCMS_Main() {
 		$CLEAN["ccms_tpl"] = "/" . $CFG["INDEX"];
 	}
 
-
-
-/*
-echo "<pre>";
-print_r($CLEAN);
-echo "</pre>";
-echo "<pre>";
-print_r($_REQUEST);
-echo "</pre>";
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-*/
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-exit;
-
-
-
 	CCMS_Set_Headers();
 
 	CCMS_Set_LNG();
@@ -800,6 +781,25 @@ exit;
 	if(preg_match("/[\/]\z/", $CLEAN["ccms_tpl"])) {
 		$CLEAN["ccms_tpl"] .= "index.html";
 	}
+
+
+
+	/*
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	exit;
+
+
 
 	// Copys the end of the string found inside $CLEAN["ccms_tpl"] after the last /.
 	// fruit/orange
