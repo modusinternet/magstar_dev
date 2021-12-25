@@ -1018,7 +1018,9 @@ print_r($_SERVER);
 echo "</pre>";
 echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
 */
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
+echo "isfill=[".$_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"]."]";
+
 exit;
 
 
