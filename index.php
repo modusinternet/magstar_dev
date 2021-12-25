@@ -2,15 +2,31 @@
 // benchmark start
 //$time_start = microtime(true);
 
-/*
+
+
+
 echo "<pre>";
 print_r($_REQUEST);
 echo "</pre>";
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-exit;
-*/
+	/*
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	//echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
+	//echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
+	//echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
+	//echo "a=[".$a."]<br>";
+	exit;
+
+
 
 // Use the ini_set function to set value of the include_path option on your server if necessary.
 // e.g.: ini_set('include_path', 'ccmslib:ccmspre:ccmstpl:ccmsusr' . ini_get('include_path'));
