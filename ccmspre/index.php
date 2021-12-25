@@ -753,6 +753,28 @@ function CCMS_TPL_Parser($a = null) {
 function CCMS_Main() {
 	global $CFG, $CLEAN;
 
+
+
+
+	/*
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
+	//echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
+	//echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
+	//echo "a=[".$a."]<br>";
+	exit;
+
+
 	// If there is no template requested, show $CFG["INDEX"].
 	// This code is used when accessing the /user/ templates, before login credentials have between
 	// verified and when dealing with URL's that resemble:
