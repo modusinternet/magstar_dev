@@ -652,6 +652,28 @@ function CCMS_TPL_Insert($a) {
 function CCMS_TPL_Parser($a = null) {
 	global $CFG;
 
+
+
+
+	/*
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	//echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
+	//echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
+	//echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
+	echo "a=[".$a."]<br>";
+	exit;
+
+
 	if($a) {
 		$from = 0;
 		$a = CCMS_html_min($a);
@@ -1007,27 +1029,6 @@ function CCMS_Main() {
 				if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"])) {
 
 					$found = true;
-
-
-
-
-/*
-echo "<pre>";
-print_r($CLEAN);
-echo "</pre>";
-echo "<pre>";
-print_r($_REQUEST);
-echo "</pre>";
-echo "<pre>";
-print_r($_SERVER);
-echo "</pre>";
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-*/
-echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
-echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
-echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
-exit;
-
 
 					if($ccms_extention[0] === "css"){
 						header("Content-Type: text/css; charset=utf-8");
