@@ -1024,7 +1024,7 @@ echo "</pre>";
 echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
 */
 echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
-echo "isfill=[".$_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"]."]<br>";
+echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
 echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
 exit;
 
