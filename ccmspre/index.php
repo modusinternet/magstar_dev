@@ -1004,6 +1004,11 @@ function CCMS_Main() {
 			} else {
 				// Cache setting in config NOT ENABLED.
 
+				if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"])) {
+
+					$found = true;
+
+
 
 
 /*
@@ -1019,15 +1024,10 @@ echo "</pre>";
 echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
 */
 echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
-echo "isfill=[".$_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"]."]";
-
+echo "isfill=[".$_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"]."]<br>";
+echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
 exit;
 
-
-
-				if(is_file($_SERVER["DOCUMENT_ROOT"] . "/" . $CFG["TPLDIR"] . $CLEAN["ccms_tpl"])) {
-
-					$found = true;
 
 					if($ccms_extention[0] === "css"){
 						header("Content-Type: text/css; charset=utf-8");
