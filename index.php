@@ -53,8 +53,29 @@ CCMS_Public_Filter($_SERVER + $_REQUEST, $whitelist);
 
 CCMS_Set_SESSION();
 
-//echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
-//exit;
+
+
+
+
+	/*
+	echo "<pre>";
+	print_r($CLEAN);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_REQUEST);
+	echo "</pre>";
+	echo "<pre>";
+	print_r($_SERVER);
+	echo "</pre>";
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]";
+	*/
+	echo "ccms_tpl=[".$CLEAN["ccms_tpl"]."]<br>";
+	//echo "isfill=[".$_SERVER["DOCUMENT_ROOT"]."/".$CFG["TPLDIR"].$CLEAN["ccms_tpl"]."]<br>";
+	//echo "ccms_extention[0]=[".$ccms_extention[0]."]<br>";
+	//echo "a=[".$a."]<br>";
+	exit;
+
+
 
 CCMS_Main();
 
